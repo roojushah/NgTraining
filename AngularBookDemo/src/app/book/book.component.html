@@ -1,0 +1,25 @@
+<div class="col-md-12">
+  <h2 class="text-center"> Book Details</h2>
+  <button class="btn btn-danger" (click)="addBook()"> Add Book</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Book Name</th>
+      <th>Author Name</th>
+      <th>Abstract</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books">
+      <td class="hidden">{{book.id}}</td>
+      <td>{{book.bookName}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.bookAbstract}}</td>
+      <td><button class="btn btn-danger" (click)="deleteBook(book)"> Delete</button>
+        <button class="btn btn-danger" (click)="editBook(book)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    <tr *ngIf="books && !books.length > 0"><td colspan="5">Sorry, no records found.</td></tr>
+    </tbody>
+  </table>
+</div>
